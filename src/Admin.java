@@ -28,6 +28,10 @@ public class Admin {
     	return false;
     }
 
+    public void logout() {
+        System.out.println("You Have Been Logged Out!");
+    }
+
     public boolean checkPayment(User user) {
         return false;
     }
