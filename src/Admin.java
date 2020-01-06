@@ -24,6 +24,10 @@ public class Admin {
     }
 
     /* Methods */
+    public boolean login(String userName, String password) {
+    	return false;
+    }
+
     public boolean checkPayment(User user) {
         return false;
     }
