@@ -29,4 +29,6 @@ public class BankPayment implements Payment {
             Database.getInstance().updatePaymentStatus(paymentStatus);
         }
     }
+
+
 }
