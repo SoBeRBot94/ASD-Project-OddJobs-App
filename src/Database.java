@@ -49,7 +49,20 @@ public class Database {
         System.out.println("Running the update Query!");
     }
 
+    public void updatePaymentStatus(String paymentStatus) {
+        System.out.println("Payment Status Saved !");
+    }
+
     public List<Request> getRequestList() {
         return new ArrayList<Request>();
+    }
+    public List<Feedback> getFeedbackList() {
+        return new ArrayList<Feedback>();
+    }
+    public List<Constraints> getConstraintsList() {
+        return new ArrayList<Constraints>();
+    }
+    public List<Preferences> getPreferencesList() {
+        return new ArrayList<Preferences>();
     }
 }
