@@ -76,8 +76,10 @@ public class Requester extends User implements UserAPI {
         Payment payment = null;
         if (type.equals("Swish")) {
             payment = new Swish();
+            payment.updateDB(user, amount);
         } else if (type.equals("BankPayment")) {
             payment = new BankPayment();
+            payment.updateDB(user, amount);
         }
         return payment.makePayment(user, amount);
     }
