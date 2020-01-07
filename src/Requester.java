@@ -76,12 +76,17 @@ public class Requester extends User implements UserAPI {
         Payment payment = null;
         if (type.equals("Swish")) {
             payment = new Swish();
-            payment.updateDB(user, amount);
         } else if (type.equals("BankPayment")) {
             payment = new BankPayment();
-            payment.updateDB(user, amount);
         }
-        return payment.makePayment(user, amount);
+        boolean paymentMade = payment.makePayment(user, amount);
+        if (paymentMade == true) {
+            payment.updateDB(user, amount);
+            return true;
+        }
+        else {
+            return false;
+        }
     }
 
     public boolean createRequest(String jobTitle, String jobDescription, long bid, long wage, Date date) {
