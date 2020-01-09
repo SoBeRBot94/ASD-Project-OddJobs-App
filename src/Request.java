@@ -26,8 +26,8 @@ public class Request {
         this.wage = wage;
         this.date = date;
         this.status = status;
-        Logger.getInstance();
-        Reception.getInstance();
+        Logger.getInstance().logRequest(this);
+        Reception.getInstance().receiveRequest(this);
         trackers = new ArrayList<Tracker>();
     }
 
@@ -35,6 +35,10 @@ public class Request {
     public void addObserver(Tracker tracker) {
         if (tracker != null) {
             this.trackers.add(tracker);
+        }
+        else if(tracker == null) {
+           Tracker _tracker = new Tracker(this);
+            this.trackers.add(_tracker);
         }
     }
 
